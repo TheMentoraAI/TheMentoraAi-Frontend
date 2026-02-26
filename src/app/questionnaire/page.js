@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import styles from "./questionaire.module.css";
 import { trackAPI } from "../../utils/api";
 
-export default function Questionnaire() {
+function QuestionnaireContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -161,5 +161,13 @@ export default function Questionnaire() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function Questionnaire() {
+  return (
+    <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>Loading...</div>}>
+      <QuestionnaireContent />
+    </Suspense>
   );
 }
