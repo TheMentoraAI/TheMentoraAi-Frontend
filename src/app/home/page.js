@@ -65,37 +65,37 @@ export default function HomePage() {
     {
       title: "ChatGPT Mastery",
       description: "Master prompt engineering and AI workflows",
-      icon: "💬",
+      icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>,
       slug: "chatgpt"
     },
     {
       title: "CANVA AI",
       description: "Design with AI-powered tools",
-      icon: "🎨",
+      icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>,
       slug: "canva"
     },
     {
       title: "NOTION AI",
       description: "Boost productivity with AI assistance",
-      icon: "📝",
+      icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>,
       slug: "notion"
     },
     {
       title: "CURSOR AI",
       description: "AI-powered code editor mastery",
-      icon: "💻",
+      icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>,
       slug: "cursor"
     },
     {
       title: "JASPER AI",
       description: "Content creation with AI",
-      icon: "✍️",
+      icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>,
       slug: "jasper"
     },
     {
       title: "MIDJOURNEY",
       description: "AI art generation mastery",
-      icon: "🖼️",
+      icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>,
       slug: "midjourney"
     }
   ];
@@ -137,7 +137,12 @@ export default function HomePage() {
             </div>
             <div className={styles.heroVisual}>
               <div className={styles.floatingIcons}>
-                {["🤖", "💡", "🚀", "⚡"].map((icon, i) => (
+                {[
+                  <svg key="1" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg>,
+                  <svg key="2" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.9 1.2 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>,
+                  <svg key="3" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>,
+                  <svg key="4" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                ].map((icon, i) => (
                   <div key={i} className={styles.floatingIcon} style={{ animationDelay: `${i * 0.5}s` }}>
                     {icon}
                   </div>
@@ -151,7 +156,7 @@ export default function HomePage() {
             <h2 className={styles.sectionTitle}>Your Learning Dashboard</h2>
             <div className={styles.statsGrid}>
               <div className={styles.statCard}>
-                <div className={styles.statIcon}>🔥</div>
+                <div className={styles.statIcon}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></div>
                 <div className={styles.statContent}>
                   <span className={styles.statValue}>
                     {loading ? "..." : `${stats?.streak_days || 0} days`}
@@ -161,7 +166,7 @@ export default function HomePage() {
               </div>
 
               <div className={styles.statCard}>
-                <div className={styles.statIcon}>⭐</div>
+                <div className={styles.statIcon}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
                 <div className={styles.statContent}>
                   <span className={styles.statValue}>
                     {loading ? "..." : `${stats?.total_xp?.toLocaleString() || 0} XP`}
@@ -171,7 +176,7 @@ export default function HomePage() {
               </div>
 
               <div className={styles.statCard}>
-                <div className={styles.statIcon}>📚</div>
+                <div className={styles.statIcon}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
                 <div className={styles.statContent}>
                   <span className={styles.statValue}>
                     {loading ? "..." : enrolledTracks.length}
@@ -181,7 +186,7 @@ export default function HomePage() {
               </div>
 
               <div className={styles.statCard}>
-                <div className={styles.statIcon}>⏱️</div>
+                <div className={styles.statIcon}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
                 <div className={styles.statContent}>
                   <span className={styles.statValue}>
                     {loading ? "..." : `${Math.round(stats?.total_hours || 0)}h`}
@@ -209,7 +214,7 @@ export default function HomePage() {
               <div className={styles.currentCourse}>
                 <div className={styles.courseHeader}>
                   <div className={styles.courseIcon}>
-                    {allTracks.find(t => t.slug === enrolledTracks[0].track_slug)?.icon || "📚"}
+                    {allTracks.find(t => t.slug === enrolledTracks[0].track_slug)?.icon || <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>}
                   </div>
                   <div className={styles.courseInfo}>
                     <h3 className={styles.courseTitle}>
@@ -258,7 +263,7 @@ export default function HomePage() {
             ) : (
               <div className={styles.currentCourse}>
                 <div className={styles.emptyState}>
-                  <div className={styles.emptyIcon}>📚</div>
+                  <div className={styles.emptyIcon}><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
                   <h3>No courses started yet</h3>
                   <p>Browse the tracks below and start your AI learning journey!</p>
                 </div>

@@ -78,25 +78,25 @@ export default function Dashboard() {
               <StatCard
                 title="XP Earned"
                 value={loading ? "..." : `${stats?.total_xp?.toLocaleString() || 0} XP`}
-                icon="⭐"
+                icon={<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>}
                 color="primary"
               />
               <StatCard
                 title="Current Streak"
                 value={loading ? "..." : `${stats?.streak_days || 0} Days`}
-                icon="🔥"
+                icon={<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>}
                 color="secondary"
               />
               <StatCard
                 title="Completed Tasks"
                 value={loading ? "..." : enrolledTracks.reduce((acc, t) => acc + t.tasks_completed, 0)}
-                icon="✅"
+                icon={<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>}
                 color="accent"
               />
               <StatCard
                 title="Courses Started"
                 value={loading ? "..." : enrolledTracks.length}
-                icon="📚"
+                icon={<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>}
                 color="purple"
               />
             </div>
@@ -114,7 +114,9 @@ export default function Dashboard() {
             {currentTrack ? (
               <div className={styles.currentTrack}>
                 <div className={styles.trackInfo}>
-                  <div className={styles.trackIcon}>💬</div>
+                  <div className={styles.trackIcon}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+                  </div>
                   <div>
                     <h3 className={styles.trackName}>{currentTrack.track_name}</h3>
                     <p className={styles.trackDesc}>Continue where you left off</p>
@@ -191,10 +193,10 @@ function StatCard({ title, value, icon, color = 'primary' }) {
 function ActivityItem({ title, time, type }) {
   const getTypeIcon = () => {
     switch (type) {
-      case 'completed': return '✅';
-      case 'started': return '🚀';
-      case 'earned': return '⭐';
-      default: return '📝';
+      case 'completed': return <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>;
+      case 'started': return <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>;
+      case 'earned': return <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>;
+      default: return <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>;
     }
   };
 

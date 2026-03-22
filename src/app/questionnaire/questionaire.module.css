@@ -90,12 +90,17 @@
 
 .optionIcon {
   font-size: 2rem;
+  color: #64748b; /* Ensures SVG inherits a visible dark grey instead of white */
 }
 
 .optionLabel {
   font-weight: 600;
   color: #374151;
   font-size: 0.95rem;
+}
+
+.selected .optionIcon {
+  color: #4f46e5;
 }
 
 .selected .optionLabel {
