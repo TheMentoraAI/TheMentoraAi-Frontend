@@ -1,22 +1,24 @@
 import axios from 'axios';
 
-// Get base URL and cleanly strip any trailing slash to prevent double-slash 404s in FastAPI
-let rawBaseURL = process.env.NEXT_PUBLIC_API_URL || 'https://thementoraai-backend-production.up.railway.app';
-const cleanBaseURL = rawBaseURL.endsWith('/') ? rawBaseURL.slice(0, -1) : rawBaseURL;
-
 // Create axios instance with base configuration
 const api = axios.create({
     // Production - Railway backend:
-    baseURL: cleanBaseURL,
+    baseURL: process.env.NEXT_PUBLIC_API_URL || 'https://thementoraai-backend-production.up.railway.app',
     headers: {
         'Content-Type': 'application/json',
     },
     withCredentials: false,
 });
 
-// Request interceptor to add auth token
+// Request interceptor to add auth token and scrub slashes
 api.interceptors.request.use(
     (config) => {
+        // CRITICAL: Force exactly one slash between baseURL and url to avoid FastAPI 404s
+        if (config.baseURL && config.url) {
+            config.baseURL = config.baseURL.replace(/\/+$/, '');
+            config.url = '/' + config.url.replace(/^\/+/, '');
+        }
+
         // Get token from localStorage
         if (typeof window !== 'undefined') {
             const token = localStorage.getItem('access_token');
