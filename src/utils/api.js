@@ -1,11 +1,13 @@
 import axios from 'axios';
 
+// Get base URL and cleanly strip any trailing slash to prevent double-slash 404s in FastAPI
+let rawBaseURL = process.env.NEXT_PUBLIC_API_URL || 'https://thementoraai-backend-production.up.railway.app';
+const cleanBaseURL = rawBaseURL.endsWith('/') ? rawBaseURL.slice(0, -1) : rawBaseURL;
+
 // Create axios instance with base configuration
 const api = axios.create({
-    // Local development (uncomment for local):
-    // baseURL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000',
     // Production - Railway backend:
-    baseURL: process.env.NEXT_PUBLIC_API_URL || 'https://thementoraai-backend-production.up.railway.app',
+    baseURL: cleanBaseURL,
     headers: {
         'Content-Type': 'application/json',
     },
