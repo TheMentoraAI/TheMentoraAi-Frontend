@@ -1,9 +1,10 @@
 import axios from 'axios';
 
 // Create axios instance with base configuration
+const overrideURL = 'https://thementoraai-backend-production.up.railway.app';
 const api = axios.create({
-    // Production - Railway backend:
-    baseURL: process.env.NEXT_PUBLIC_API_URL || 'https://thementoraai-backend-production.up.railway.app',
+    // Hardcoded production backend to bypass potentially poisoned Vercel environment variables
+    baseURL: overrideURL,
     headers: {
         'Content-Type': 'application/json',
     },
